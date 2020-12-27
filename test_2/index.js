@@ -10,12 +10,11 @@
  * expected results of this.
  *
  * @returns  {Object[]}
- */
+ */ 
 module.exports = function test2() {
-  let results;
+  let results = require('./test_data.json')
+  const filtered = results.filter((char) => char.last_name === "Simpson").map((char) => ({ ...char, example: `${char.first_name} ${char.last_name} says ${char.catchphrase}` }))
+    
 
-  // Write your code here.  The pre-written lines above and below are just suggestions, feel free to delete
-  // them and start fresh.
-
-  return results;
+  return filtered;
 };
